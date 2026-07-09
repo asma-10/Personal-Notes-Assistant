@@ -28,12 +28,12 @@ Facts persist **across conversations** (keyed by `user_id`), while the LangGraph
 ├── api/
 │   └── routers/
 │       └── chat_endpoint.py # /chat route definition
-├── graph/
+|   ├── schemas.py       # Pydantic request/response models
+|   ├── functions.py  
+├── graphs/
 │   ├── state.py             # TypedDict graph state
-│   ├── nodes.py             # Node functions (load_memories, chat, memorize, save_if_needed)
-│   └── build_graph.py       # StateGraph wiring + compilation
-├── schemas/
-│   └── api_schemas.py       # Pydantic request/response models
+│   ├── instances.py             # Node functions (load_memories, chat, memorize, save_if_needed)
+│   └── build.py       # StateGraph wiring + compilation
 ├── memory_store.py           # Local JSON-based memory read/write functions
 ├── memories.json             # Local memory storage (created automatically)
 ├── requirements.txt
